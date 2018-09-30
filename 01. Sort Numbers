@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class sortNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double num1 = Double.parseDouble(input.nextLine());
+        double num2 = Double.parseDouble(input.nextLine());
+        double num3 = Double.parseDouble(input.nextLine());
+        double maxNum = Double.NEGATIVE_INFINITY;
+        double secNum = 0;
+        double lastNum = 0;
+        if (num1 >= maxNum) {
+            maxNum = num1;
+        }
+        if (num2 >= maxNum) {
+            maxNum = num2;
+        }
+        if (num3 >= maxNum) {
+            maxNum = num3;
+        }
+        System.out.printf("%.2f%n", maxNum);
+        if (maxNum == num1) {
+            if (num2 >= num3) {
+                secNum = num2;
+                lastNum = num3;
+            } else {
+                secNum = num3;
+                lastNum = num2;
+            }
+        } else if (maxNum == num2) {
+            if (num1 >= num3) {
+                secNum = num1;
+                lastNum = num3;
+            } else {
+                secNum = num3;
+                lastNum = num1;
+            }
+        } else if (maxNum == num3) {
+            if (num1 >= num2) {
+                secNum = num1;
+                lastNum = num2;
+            } else {
+                secNum = num2;
+                lastNum = num1;
+            }
+        }
+        System.out.printf("%.2f%n", secNum);
+        System.out.printf("%.2f%n", lastNum);
+    }
+}
