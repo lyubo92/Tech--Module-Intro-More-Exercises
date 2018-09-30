@@ -1,0 +1,125 @@
+import java.util.Scanner;
+
+public class gameStore {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double budget = Double.parseDouble(input.nextLine());
+        String game = input.nextLine();
+        double spentMoney = 0;
+        while (!game.equals("Game Time")) {
+            switch (game) {
+                case "OutFall 4":
+                    budget -= 39.99;
+                    if (budget < 0) {
+                        System.out.println("Too expensive");
+                        budget += 39.99;
+                        game = input.nextLine();
+                        break;
+                    } else if (budget == 0) {
+                        System.out.println("Bought OutFall 4");
+                        System.out.println("Out of money!");
+                        return;
+                    } else {
+                        System.out.println("Bought OutFall 4");
+                        spentMoney += 39.99;
+                        game = input.nextLine();
+                    }
+                    break;
+
+                case "CS: OG":
+                    budget -= 15.99;
+                    if (budget < 0) {
+                        System.out.println("Too expensive");
+                        budget += 15.99;
+                        game = input.nextLine();
+                        break;
+                    } else if (budget == 0) {
+                        System.out.println("Bought CS: OG");
+                        System.out.println("Out of money!");
+                        return;
+                    } else {
+                        System.out.println("Bought CS: OG");
+                        spentMoney += 15.99;
+                        game = input.nextLine();
+                    }
+                    break;
+                case "Zplinter Zell":
+                    budget -= 19.99;
+                    if (budget < 0) {
+                        System.out.println("Too expensive");
+                        budget += 19.99;
+                        game = input.nextLine();
+                        break;
+                    } else if (budget == 0) {
+                        System.out.println("Bought Zplinter Zell");
+                        System.out.println("Out of money!");
+                        return;
+                    } else {
+                        System.out.println("Bought OutFall 4");
+                        spentMoney += 19.99;
+                        game = input.nextLine();
+                    }
+                    break;
+                case "Honored 2":
+                    budget -= 59.99;
+                    if (budget < 0) {
+                        System.out.println("Too expensive");
+                        budget += 59.99;
+                        game = input.nextLine();
+                        break;
+                    } else if (budget == 0) {
+                        System.out.println("Bought Honored 2");
+                        System.out.println("Out of money!");
+                        return;
+                    } else {
+                        System.out.println("Bought Honored 2");
+                        spentMoney += 59.99;
+                        game = input.nextLine();
+                    }
+                    break;
+                case "RoverWatch":
+                    budget -= 29.99;
+                    if (budget < 0) {
+                        System.out.println("Too expensive");
+                        budget += 29.99;
+                        game = input.nextLine();
+                        break;
+                    } else if (budget == 0) {
+                        System.out.println("Bought RoverWatch");
+                        System.out.println("Out of money!");
+                        return;
+                    } else {
+                        System.out.println("Bought RoverWatch");
+                        spentMoney += 29.99;
+                        game = input.nextLine();
+                    }
+                    break;
+                case "RoverWatch Origins Edition":
+                    budget -= 39.99;
+                    if (budget < 0) {
+                        System.out.println("Too expensive");
+                        budget += 39.99;
+                        game = input.nextLine();
+                        break;
+                    } else if (budget == 0) {
+                        System.out.println("Bought RoverWatch Origins Edition");
+                        System.out.println("Out of money!");
+                        return;
+                    } else {
+                        System.out.println("Bought RoverWatch Origins Edition");
+                        spentMoney += 39.99;
+                        game = input.nextLine();
+                    }
+                    break;
+
+                default:
+                    System.out.println("Not found");
+                    game = input.nextLine();
+                    break;
+            }
+        }
+
+        System.out.printf("Total spent: $%.2f. ", spentMoney);
+        System.out.printf("Remaining: $%.2f", budget);
+    }
+}
